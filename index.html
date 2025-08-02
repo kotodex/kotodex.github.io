@@ -7,19 +7,25 @@
   <meta name="description" content="KotoDex is a minimalist, powerful tool to help you learn anything through smart flashcards, meaningful context, and clean design." />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" />
   <style>
+    :root {
+      --main-color: #ea5c4f;
+      --text-color: #ffffff;
+      --bg-color: #fdf6f3;
+    }
+
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background: #fdfdfd;
-      color: #222;
+      background: var(--bg-color);
+      color: #1e1e2f;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
     }
 
     header {
-      background-color: #20232a;
-      color: #fff;
+      background-color: var(--main-color);
+      color: var(--text-color);
       padding: 1.5rem;
       text-align: center;
     }
@@ -39,9 +45,17 @@
       text-align: center;
     }
 
+    .app-icon {
+      width: 120px;
+      height: 120px;
+      border-radius: 24px;
+      margin-bottom: 1.5rem;
+    }
+
     main h2 {
-      font-size: 1.75rem;
+      font-size: 2rem;
       margin-bottom: 1rem;
+      color: var(--main-color);
     }
 
     main p {
@@ -49,27 +63,37 @@
       max-width: 600px;
       margin-bottom: 2rem;
     }
-
-    .button {
-      background-color: #0070f3;
+    .play-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background-color: #000;
       color: white;
-      padding: 0.75rem 1.5rem;
-      border: none;
+      padding: 0.4rem 1rem;
       border-radius: 0.5rem;
-      font-weight: 600;
       text-decoration: none;
+      font-weight: 600;
       transition: background-color 0.3s ease;
     }
 
-    .button:hover {
-      background-color: #0059c1;
+    .play-button img {
+      height: 40px;
     }
-
     footer {
       text-align: center;
       padding: 1rem;
       font-size: 0.875rem;
       color: #777;
+    }
+
+    footer a {
+      color: var(--main-color);
+      text-decoration: none;
+      margin-left: 1rem;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -80,13 +104,18 @@
   </header>
 
   <main>
+    <img class="app-icon" src="./assets/kotodex-icon.svg" alt="KotoDex Icon" />
     <h2>Master Study the Smart Way</h2>
     <p>KotoDex helps you learn anything you want through smart flashcards, contextual learning, and a clean, minimalist experience. Stay focused. Learn effectively. Remember more.</p>
-    <a class="button" href="https://play.google.com/store/apps/details?id=com.fzuccala.kotodex" target="_blank" rel="noopener">Download on Google Play</a>
+    <a class="play-button" href="https://play.google.com/store/apps/details?id=com.fzuccala.kotodex" target="_blank" rel="noopener">
+      <img src="./assets/google-play-icon.svg" alt="Get it on Google Play" />
+      Download on Google Play
+    </a>
   </main>
 
   <footer>
     © 2025 KotoDex. All rights reserved.
+    <a href="https://kotodex.github.io/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
   </footer>
 
 </body>
