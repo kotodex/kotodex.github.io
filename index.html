@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="google-site-verification" content="qTwN4e5dcJUcy_uuW1x9T9WiQ-wJBGDRHMufcQirnX4" />
-  <title>KotoDex – Master Study the Smart Way</title>
   <meta name="description" content="KotoDex is a minimalist, powerful tool to help you learn anything through smart flashcards, meaningful context, and clean design." />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" />
+  <link rel="icon" href="./assets/kotodex-icon.svg" type="image/svg+xml" />
   <style>
     :root {
       --main-color: #ea5c4f;
@@ -80,8 +80,15 @@
     .play-button img {
       height: 40px;
     }
+    .lang-content {
+      display: none;
+    }
+    .lang-content.active {
+      display: block;
+    }
     footer {
       text-align: center;
+      align-self: center;
       padding: 1rem;
       font-size: 0.875rem;
       color: #777;
@@ -93,10 +100,17 @@
       margin-left: 1rem;
     }
 
+    footer select {
+      color: #777;
+      text-decoration: none;
+      margin-left: 1rem;
+    }
+
     footer a:hover {
       text-decoration: underline;
     }
   </style>
+  <title>KotoDex</title>
 </head>
 <body>
 
@@ -106,17 +120,46 @@
 
   <main>
     <img class="app-icon" src="./assets/kotodex-icon.svg" alt="KotoDex Icon" />
-    <h2>Master Study the Smart Way</h2>
-    <p>KotoDex helps you learn anything you want through smart flashcards, contextual learning, and a clean, minimalist experience. Stay focused. Learn effectively. Remember more.</p>
+    <h2 class="lang-content active" data-lang="en">Create flashcards directly from a Google Sheet!</h2>
+    <h2 class="lang-content" data-lang="es">¡Creá flashcards directamente desde un Google Sheet!</h2>
+    <h2 class="lang-content" data-lang="ja">Googleスプレッドシートから直接フラッシュカードを作成できます！</h2>
+    <p class="lang-content active" data-lang="en">KotoDex helps you learn anything you want through smart flashcards, contextual learning, and a clean, minimalist experience. Stay focused. Learn effectively. Remember more.</p>
+    <p class="lang-content" data-lang="es">KotoDex te ayuda a aprender lo que quieras con flashcards inteligentes, aprendizaje contextual y una experiencia limpia y minimalista. Mantené el foco. Aprendé de forma efectiva. Recordá más.</p>
+    <p class="lang-content" data-lang="ja">KotoDexは、スマートなフラッシュカードと文脈に基づいた学習、そしてミニマルで集中しやすい体験で、あなたの学びをサポートします。集中しよう。効率よく学ぼう。しっかり記憶に残そう。</p>
+
     <a class="play-button" href="https://play.google.com/store/apps/details?id=com.fzuccala.kotodex" target="_blank" rel="noopener">
       <img src="./assets/google-play-icon.svg" alt="Get it on Google Play" />
-      Download on Google Play
+      <div class="lang-content active" data-lang="en">Download on Google Play</div>
+      <div class="lang-content" data-lang="es">Descargar en Google Play</div>
+      <div class="lang-content" data-lang="ja">Google Play からダウンロード</div>
     </a>
   </main>
 
-  <footer>
-    © 2025 KotoDex. All rights reserved.
-    <a href="https://kotodex.github.io/privacy-policy/" rel="noopener">Privacy Policy</a>
+  <footer style="display: flex;">
+    <div class="lang-content active" data-lang="en">© 2025 KotoDex. All rights reserved.</div>
+    <div class="lang-content" data-lang="es">© 2025 KotoDex. Todos los derechos reservados.</div>
+    <div class="lang-content" data-lang="ja">© 2025 KotoDex. 無断転載を禁じます。</div>
+    <a class="lang-content active" data-lang="en" href="https://kotodex.github.io/privacy-policy/" rel="noopener">Privacy Policy</a>
+    <a class="lang-content" data-lang="es" href="https://kotodex.github.io/privacy-policy/" rel="noopener">Política de privacidad</a>
+    <a class="lang-content" data-lang="ja" href="https://kotodex.github.io/privacy-policy/" rel="noopener">プライバシーポリシー</a>
+
+  <select id="languageSwitcher">
+    <option value="en">English</option>
+    <option value="es">Español</option>
+    <option value="ja">日本語</option>
+  </select>
+
+  <script>
+    const switcher = document.getElementById('languageSwitcher');
+    const contents = document.querySelectorAll('.lang-content');
+
+    switcher.addEventListener('change', () => {
+      const selectedLang = switcher.value;
+      contents.forEach(div => {
+        div.classList.toggle('active', div.getAttribute('data-lang') === selectedLang);
+      });
+    });
+  </script>
   </footer>
 
 </body>
