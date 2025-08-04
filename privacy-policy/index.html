@@ -44,6 +44,35 @@
     header a:hover {
       text-decoration: underline;
     }
+
+    header select {
+      position: absolute;
+      top: 0.9rem;
+      right: 1rem;
+      padding: 0.4rem 0.8rem;
+
+      background-color: white;
+      color: #333;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+      background-image: none;
+      background-size: 12px;
+      cursor: pointer;
+    }
+
+    header select :focus {
+      outline: none;
+      box-shadow: 0 0 0 2px #a8d0e6;
+    }
+
     ul {
       list-style: disc;
       padding-left: 1.5em;
@@ -99,7 +128,12 @@
     <div class="lang-content" data-lang="ja">&larr; ホームに戻る</div>
   </a>
   <strong>KotoDex</strong>
-  <div></div>
+  
+  <select id="languageSwitcher">
+    <option value="en">English</option>
+    <option value="es">Español</option>
+    <option value="ja">日本語</option>
+  </select>
 </header>
 
 <div class="container">
@@ -211,25 +245,19 @@
     <div class="lang-content active" data-lang="en">© 2025 KotoDex. All rights reserved.</div>
     <div class="lang-content" data-lang="es">© 2025 KotoDex. Todos los derechos reservados.</div>
     <div class="lang-content" data-lang="ja">© 2025 KotoDex. 無断転載を禁じます。</div>
-    
-  <select id="languageSwitcher">
-    <option value="en">English</option>
-    <option value="es">Español</option>
-    <option value="ja">日本語</option>
-  </select>
-
-  <script>
-    const switcher = document.getElementById('languageSwitcher');
-    const contents = document.querySelectorAll('.lang-content');
-
-    switcher.addEventListener('change', () => {
-      const selectedLang = switcher.value;
-      contents.forEach(div => {
-        div.classList.toggle('active', div.getAttribute('data-lang') === selectedLang);
-      });
-    });
-  </script>
   </footer>
 
 </body>
+
+<script>
+  const switcher = document.getElementById('languageSwitcher');
+  const contents = document.querySelectorAll('.lang-content');
+
+  switcher.addEventListener('change', () => {
+    const selectedLang = switcher.value;
+    contents.forEach(div => {
+      div.classList.toggle('active', div.getAttribute('data-lang') === selectedLang);
+    });
+  });
+</script>
 </html>
