@@ -23,7 +23,7 @@
       display: flex;
     }
     header {
-      background-color: #f75247; /* KotoDex accent color */
+      background-color:var(--main-color);
       color: white;
       padding: 1em;
       display: flex;
@@ -43,6 +43,17 @@
     }
     header a:hover {
       text-decoration: underline;
+    }
+    ul {
+      list-style: disc;
+      padding-left: 1.5em;
+      color: #333;
+    }
+    li::before {
+      content: "•";
+      color: #333;
+      padding-right: 0.5em;
+      font-size: large;
     }
     .container {
       max-width: 700px;
@@ -81,55 +92,126 @@
   </style>
 </head>
 <body>
+<header>
+  <a href="https://kotodex.github.io/">
+    <div class="lang-content active" data-lang="en">&larr; Back to Home</div>
+    <div class="lang-content" data-lang="es">&larr; Volver al inicio</div>
+    <div class="lang-content" data-lang="ja">&larr; ホームに戻る</div>
+  </a>
+  <strong>KotoDex</strong>
+  <div></div>
+</header>
 
-  <header>
-    <a href="https://kotodex.github.io/">&larr; Back to Home</a>
-    <strong>KotoDex</strong>
-    <div></div> 
-  </header>
+<div class="container">
+  <h1 class="lang-content active" data-lang="en">Privacy Policy</h1>
+  <h1 class="lang-content" data-lang="es">Política de Privacidad</h1>
+  <h1 class="lang-content" data-lang="ja">プライバシーポリシー</h1>
 
-  <div class="container">
-    <h1>Privacy Policy</h1>
-    <p><em>Last updated: July 30, 2025</em></p>
+  <p><em>Last updated: July 30, 2025</em></p>
 
-    <p>KotoDex respects your privacy. This document explains what data we access, how it is used, and what choices you have.</p>
+  <p class="lang-content active" data-lang="en">
+    KotoDex respects your privacy. This document explains what data we access, how it is used, and what choices you have.
+  </p>
+  <p class="lang-content" data-lang="es">
+    KotoDex respeta tu privacidad. Este documento explica qué datos se acceden, cómo se usan y qué opciones tenés.
+  </p>
+  <p class="lang-content" data-lang="ja">
+    KotoDexはあなたのプライバシーを尊重します。このドキュメントでは、どのデータにアクセスするか、どのように使用されるか、そしてあなたが取れる選択肢について説明します。
+  </p>
 
-    <hr />
+  <hr/>
 
-    <h2>📲 Data Collection</h2>
-    <p>KotoDex does <strong>not</strong> collect or store personal information.</p>
+  <h2 class="lang-content active" data-lang="en">📲 Data Collection</h2>
+  <h2 class="lang-content" data-lang="es">📲 Recopilación de Datos</h2>
+  <h2 class="lang-content" data-lang="ja">📲 データ収集</h2>
+  <p class="lang-content active" data-lang="en">
+    KotoDex does <strong>not</strong> collect or store personal information.
+  </p>
+  <p class="lang-content" data-lang="es">
+    KotoDex <strong>no</strong> recopila ni almacena información personal.
+  </p>
+  <p class="lang-content" data-lang="ja">
+    KotoDexは<strong>個人情報を収集または保存しません</strong>。
+  </p>
 
-    <hr />
+  <hr />
 
-    <h2>🔐 Google Sign-In and Google Sheets Access</h2>
-    <p>KotoDex uses Google Sign-In <strong>only</strong> to access the user's own Google Sheets.</p>
-    <ul>
-      <li>We <strong>do not</strong> access or collect your name, email, or profile.</li>
-      <li>A temporary authentication token is used to interact with the Google Sheets API.</li>
-      <li>This token is used during your session only and is not shared.</li>
-      <li>No data is transmitted to any external server outside of Google's APIs.</li>
-    </ul>
-    <p>You are always in full control of your data, which remains in your Google account.</p>
+  <h2 class="lang-content active" data-lang="en">🔐 Google Sign-In and Google Sheets Access</h2>
+  <h2 class="lang-content" data-lang="es">🔐 Inicio de sesión con Google y acceso a Google Sheets</h2>
+  <h2 class="lang-content" data-lang="ja">🔐 GoogleサインインとGoogleスプレッドシートのアクセス</h2>
+  
+  <p class="lang-content active" data-lang="en">
+    KotoDex uses Google Sign-In <strong>only</strong> to access the user's own Google Sheets.
+  </p>
+  <p class="lang-content" data-lang="es">
+    KotoDex utiliza el inicio de sesión con Google <strong>solo</strong> para acceder a tus propias hojas de cálculo.
+  </p>
+  <p class="lang-content" data-lang="ja">
+    KotoDexは<strong>ユーザー自身の</strong>GoogleスプレッドシートにアクセスするためにのみGoogleサインインを使用します。
+  </p>
+  <ul>
+    <li class="lang-content active" data-lang="en">We <strong>do not</strong> access or collect your name, email, or profile.</li>
+    <li class="lang-content" data-lang="es">No accedemos ni recopilamos tu nombre, correo electrónico o perfil.</li>
+    <li class="lang-content" data-lang="ja">お名前、メールアドレス、プロフィールには<strong>アクセスも収集もしません</strong>。</li>
 
-    <hr />
+    <li class="lang-content active" data-lang="en">A temporary authentication token is used to interact with the Google Sheets API.</li>
+    <li class="lang-content" data-lang="es">Se utiliza un token de autenticación temporal para interactuar con la API de Google Sheets.</li>
+    <li class="lang-content" data-lang="ja">Google Sheets APIとやり取りするために一時的な認証トークンが使用されます。</li>
 
-    <h2>🚫 Data Sharing</h2>
-    <p>KotoDex does <strong>not</strong> share any data with third parties.</p>
+    <li class="lang-content active" data-lang="en">This token is used during your session only and is not shared.</li>
+    <li class="lang-content" data-lang="es">Este token se utiliza solo durante tu sesión y no se comparte.</li>
+    <li class="lang-content" data-lang="ja">このトークンはセッション中のみ使用され、共有されることはありません。</li>
 
-    <hr />
+    <li class="lang-content active" data-lang="en">No data is transmitted to any external server outside of Google's APIs.</li>
+    <li class="lang-content" data-lang="es">No se transmite ningún dato a servidores externos fuera de las APIs de Google.</li>
+    <li class="lang-content" data-lang="ja">GoogleのAPI以外の外部サーバーには、データは送信されません。</li>
+  </ul>
+  <p class="lang-content active" data-lang="en">
+    You are always in full control of your data, which remains in your Google account.
+  </p>
+  <p class="lang-content" data-lang="es">
+    Siempre tenés el control total de tus datos, que permanecen en tu cuenta de Google.
+  </p>
+  <p class="lang-content" data-lang="ja">
+    データはあなたのGoogleアカウント内にとどまり、常にあなたが完全に管理できます。
+  </p>
 
-    <h2>❓ Questions</h2>
-    <p>If you have any questions or concerns about this policy, feel free to reach out.</p>
-  </div>
+  <hr />
+
+  <h2 class="lang-content active" data-lang="en">🚫 Data Sharing</h2>
+  <h2 class="lang-content" data-lang="es">🚫 Compartición de Datos</h2>
+  <h2 class="lang-content" data-lang="ja">🚫 データ共有</h2>
+  <p class="lang-content active" data-lang="en">
+    KotoDex does <strong>not</strong> share any data with third parties.
+  </p>
+  <p class="lang-content" data-lang="es">
+    KotoDex <strong>no</strong> comparte ningún dato con terceros.
+  </p>
+  <p class="lang-content" data-lang="ja">
+    KotoDexは、<strong>第三者とデータを共有しません</strong>。
+  </p>
+
+  <hr/>
+
+  <h2 class="lang-content active" data-lang="en">❓ Questions</h2>
+  <h2 class="lang-content" data-lang="es">❓ Preguntas</h2>
+  <h2 class="lang-content" data-lang="ja">❓ ご質問</h2>
+  <p class="lang-content active" data-lang="en">
+    If you have any questions or concerns about this policy, feel free to reach out.
+  </p>
+  <p class="lang-content" data-lang="es">
+    Si tenés preguntas o inquietudes sobre esta política, no dudes en contactarnos.
+  </p>
+  <p class="lang-content" data-lang="ja">
+    本ポリシーに関するご質問やご不明点があれば、お気軽にご連絡ください。
+  </p>
+</div>
 
   <footer style="display: flex;">
     <div class="lang-content active" data-lang="en">© 2025 KotoDex. All rights reserved.</div>
     <div class="lang-content" data-lang="es">© 2025 KotoDex. Todos los derechos reservados.</div>
     <div class="lang-content" data-lang="ja">© 2025 KotoDex. 無断転載を禁じます。</div>
-    <a class="lang-content active" data-lang="en" href="https://kotodex.github.io/privacy-policy/" rel="noopener">Privacy Policy</a>
-    <a class="lang-content" data-lang="es" href="https://kotodex.github.io/privacy-policy/" rel="noopener">Política de privacidad</a>
-    <a class="lang-content" data-lang="ja" href="https://kotodex.github.io/privacy-policy/" rel="noopener">プライバシーポリシー</a>
-
+    
   <select id="languageSwitcher">
     <option value="en">English</option>
     <option value="es">Español</option>
